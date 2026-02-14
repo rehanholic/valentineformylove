@@ -1,1 +1,175 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine for My Cutu 💛</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(145deg, #1b2c5a, #0f1f3d);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    top: 10vh;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+img {
+    width: 220px;
+    margin: 15px;
+}
+
+.buttons {
+    margin-top: 40px;
+}
+
+button {
+    padding: 14px 28px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#noBtn {
+    background-color: #cccccc;
+    color: black;
+    position: absolute;
+}
+
+.funfacts {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.heartParticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 18px;
+    animation: float 7s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(110vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="heartParticles" id="hearts"></div>
+
+<div class="container">
+
+<img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/heart.svg" alt="heart illustration">
+
+<h1>Can I Be Your Valentine, My Love? 💛</h1>
+
+<p>
+My cutu… I’ve been wanting to ask you<br>
+in the cutest way possible…<br>
+Please say yes, princess.
+</p>
+
+<div class="buttons">
+    <button id="yesBtn">Yes 💖</button>
+    <button id="noBtn">No 🙈</button>
+</div>
+
+</div>
+
+<div class="funfacts">
+💛 Fun Facts About My Cutu:<br>
+• Favourite ice cream: Butterscotch 🍨<br>
+• Favourite colour: Yellow 💛<br>
+• Current fav song: Mitti Di Khushboo 🎶
+</div>
+
+<script>
+let yesBtn = document.getElementById("yesBtn");
+let noBtn = document.getElementById("noBtn");
+let size = 1;
+
+// Heart particles
+function createHearts() {
+    const colors = ["#ff4d6d", "#ffb3c6", "#ffee58"];
+    for (let i = 0; i < 25; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        heart.innerHTML = "❤️";
+        document.getElementById("hearts").appendChild(heart);
+    }
+}
+createHearts();
+
+// No button moves
+noBtn.addEventListener("mouseover", function() {
+    let x = Math.random() * window.innerWidth * 0.8;
+    let y = Math.random() * window.innerHeight * 0.8;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+    size += 0.3;
+    yesBtn.style.transform = "scale(" + size + ")";
+});
+
+// Yes button click
+yesBtn.addEventListener("click", function() {
+    document.body.innerHTML = `
+    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;background:linear-gradient(135deg,#ff4d6d,#ff99ac);color:white;text-align:center;">
+        <h1>She Said Yes 😭💛</h1>
+        <h2>You’re My Valentine Now.</h2>
+        <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/heart.svg" style="width:200px;margin-top:20px;">
+        <h2>Forever Starts Now.</h2>
+    </div>
+    `;
+});
+
+</script>
+
+</body>
+</html>
