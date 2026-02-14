@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Cutu ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f1f3d, #1b2c5a);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    top: 15vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+img {
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    margin: 10px;
+    object-fit: cover;
+    filter: blur(6px); /* Pixelated placeholder */
+}
+
+.buttons {
+    margin-top: 40px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#noBtn {
+    background-color: #cccccc;
+    color: black;
+    position: absolute;
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Will You Be My Valentine, My Love? ❤️</h1>
+    <p>
+        My cutu… my cute lil princess…  
+        You already know you belong right here with me.
+    </p>
+
+    <!-- Replace these with your real images later -->
+    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+    <img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif">
+
+    <div class="buttons">
+        <button id="yesBtn">Yes 💖</button>
+        <button id="noBtn">No 🙈</button>
+    </div>
+</div>
+
+<div class="footer">
+    Lifetime Contract. No refunds. No cancellations. 💙
+</div>
+
+<script>
+let yesBtn = document.getElementById("yesBtn");
+let noBtn = document.getElementById("noBtn");
+
+let size = 1;
+
+noBtn.addEventListener("mouseover", function() {
+    let x = Math.random() * window.innerWidth * 0.8;
+    let y = Math.random() * window.innerHeight * 0.8;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    size += 0.3;
+    yesBtn.style.transform = "scale(" + size + ")";
+});
+
+yesBtn.addEventListener("click", function() {
+    document.body.innerHTML = `
+    <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;background:linear-gradient(135deg,#ff4d6d,#ff99ac);color:white;text-align:center;">
+        <h1>Good Girl 😌💖</h1>
+        <h2>You’re Mine, My Cutu.</h2>
+        <p>Happy Valentine’s Day, Princess.</p>
+        <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" width="250">
+    </div>
+    `;
+});
+</script>
+
+</body>
+</html>
